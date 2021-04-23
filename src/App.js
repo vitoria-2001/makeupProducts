@@ -5,14 +5,17 @@ const doFetchProducts= async () => {
   const json = await resource.json();
 
   return json.map((product) => {
+    const {name, id, category, product_type, brand, price, price_sign} = product;
+
     return {
-      id: product.id,
-      name: product.name,
-      product_type: product.product_type,
-      category: product.category,
-      brand: product.brand,
-      price:product.price,
-      price_sign: product.price_sign,
+      id,
+      name,
+      nameFiltered: name.toLowerCase(),
+      product_type,
+      category,
+      brand,
+      price,
+      price_sign,
       img: product.image_link
     };
   });
@@ -26,7 +29,7 @@ export default function App() {
 
   useEffect(() => {
     const getProducts = async () => {
-        allProducts = await doFetchProducts();
+      const  allProducts = await doFetchProducts();
       setAllProducts(allProducts);
       setFoundProducts(Object.assign([], allProducts));
     };
@@ -39,13 +42,18 @@ export default function App() {
   useEffect (() => {
     const filterTextProduct = requiredProduct.toLowerCase();
 
-     foundProducts = allProducts.filter((product) => {
+     const foundProducts = allProducts.filter((product) => {
       return product.nameFiltered.includes(filterTextProduct);
     });
 
     setFoundProducts(foundProducts);
     setTotalFoundProducts(foundProducts.length);
   }, [allProducts, requiredProduct]);
+
+  //trata da alteração no input do filtro
+  const handleRequiredProduct = (event) => {
+    setRequiredProduct(event.target.value);
+  };
 
   return (
     <div>
