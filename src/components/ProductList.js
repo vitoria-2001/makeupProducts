@@ -1,19 +1,18 @@
 import React from 'react';
 
-export default function ProductList ({productList}) {
+export default function ProductList ({productsList}) {
 
-    if (productList.length === 0) {
-        return <h3>No found products!</h3>
+   if (productsList.length === 0) {
+       return <h3>No found products!</h3>
     }
-    retrun (
+    return (
         <div>
             <h2>Product(s):</h2>
-
             <ul>
-                {productList.map((product) => {
+                {productsList.map((product) => {
                     const {id} = product;
 
-                    retrun (
+                    return (
                         <li key={id}>
                         </li>
                     )
