@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductItem from './ProductItem';
 
 export default function ProductList ({productsList}) {
 
@@ -14,6 +15,7 @@ export default function ProductList ({productsList}) {
 
                     return (
                         <li key={id}>
+                            <ProductItem item={product} />
                         </li>
                     )
                 })}
