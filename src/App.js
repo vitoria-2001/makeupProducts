@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from  'react';
+import ProductList from './components/ProductList';
 
 const doFetchProducts= async () => {
   const resource= await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
@@ -71,7 +72,7 @@ export default function App() {
     <hr/>
 
     <div>
-
+      <ProductList productsList={foundProducts} />
     </div>
     </div>
   );
