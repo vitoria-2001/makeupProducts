@@ -66,9 +66,13 @@ export default function App() {
       value={requiredProduct}
       onChange={handleRequiredProduct}
       />
+      | Quantity of found products: <strong> {totalFoundProducts}</strong>
     </div>
+    <hr/>
 
-      
+    <div>
+
+    </div>
     </div>
   );
 }
