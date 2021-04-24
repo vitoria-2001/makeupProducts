@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from  'react';
 import ProductList from './components/ProductList';
+import Spinner from './components/Spinner';
 
 const doFetchProducts= async () => {
   const resource= await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
@@ -57,7 +58,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <nav>MAKEUP | PRODUCTS</nav>
 
     <div>
@@ -73,6 +74,9 @@ export default function App() {
 
     <div>
       <ProductList productsList={foundProducts} />
+
+      {!foundProducts && <Spinner/>} 
+      {foundProducts.length === 0 && <Spinner/>}
     </div>
     </div>
   );
