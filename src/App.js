@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from  'react';
 import ProductList from './components/ProductList';
 import Spinner from './components/Spinner';
+import styles from './styles/App.module.css';
 
 const doFetchProducts= async () => {
   const resource= await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
@@ -59,7 +60,10 @@ export default function App() {
 
   return (
     <div className="container">
-      <nav>MAKEUP | PRODUCTS</nav>
+      <div className="nav">
+      <nav className="nav-item">MAKEUP | PRODUCTS</nav>
+      </div>
+    
 
     <div>
       <input
@@ -75,8 +79,7 @@ export default function App() {
     <div>
       <ProductList productsList={foundProducts} />
 
-      {!foundProducts && <Spinner/>} 
-      {foundProducts.length === 0 && <Spinner/>}
+      {!foundProducts && <Spinner/>}
     </div>
     </div>
   );
