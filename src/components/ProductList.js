@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 import Spinner from './Spinner';
+import css from '../styles/app.module.css';
 
 export default function ProductList ({productsList}) {
     if (productsList.length === 0) {
@@ -9,8 +10,8 @@ export default function ProductList ({productsList}) {
   
     return (
         <div>
-            <h2>Product(s):</h2>
-            <ul>
+            <h2 className={css.titleBody}>Product(s):</h2>
+            <ul className={css.productList}>
                 {productsList.map((product) => {
                     const {id} = product;
 
