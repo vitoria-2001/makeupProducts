@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from  'react';
 import ProductList from './components/ProductList';
 import Spinner from './components/Spinner';
-import css from 'app.module.css';
+import css from 'app.css';
 
 const doFetchProducts= async () => {
   const resource= await fetch("https://makeup-api.herokuapp.com/api/v1/products.json");
