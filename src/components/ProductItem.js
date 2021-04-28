@@ -1,5 +1,4 @@
 import React from 'react';
-import css from '../styles/app.module.css';
 
 export default function ProductItem ({item}) {
     const {id, name, category, product_type,  brand, price,price_sign, img } = item;

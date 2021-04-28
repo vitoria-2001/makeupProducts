@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 import Spinner from './Spinner';
-import css from '../styles/app.module.css';
+import css from '../app.module.css';
 
 export default function ProductList ({productsList}) {
     if (productsList.length === 0) {
