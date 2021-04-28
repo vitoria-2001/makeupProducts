@@ -61,7 +61,8 @@ export default function App() {
   return (
     <div>
       <div className="nav">
-      <nav  className="nav-item"><h2>MAKEUP | PRODUCTS</h2></nav>
+      <nav  className="nav-item">
+        <h2>MAKEUP | PRODUCTS</h2></nav>
       </div>
 
     <div  className={css.container} >
