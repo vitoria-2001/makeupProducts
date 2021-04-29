@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "app.css": "^0.1.2",
     "gulp": "^4.0.2",
+    "gulp-kss": "^0.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
